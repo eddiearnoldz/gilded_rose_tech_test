@@ -134,11 +134,16 @@ describe("Gilded Rose", function() {
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toBe(0);
       });
-      it("quality reduces by 1 if quality is equal to 1", () => {
-        const gildedRose = new Shop([new Item('conjured lizard', 0, 3)]);
+      it("sellIn reduces by 1 ", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', 1, 2)]);
         const items = gildedRose.updateQuality();
-        expect(items[0].quality).toBe(1);
+        expect(items[0].sellIn).toBe(0);
       });
+      // it("quality reduces by 1 if quality is equal to 1", () => {
+      //   const gildedRose = new Shop([new Item('conjured lizard', 0, 3)]);
+      //   const items = gildedRose.updateQuality();
+      //   expect(items[0].quality).toBe(1);
+      // });
     })
   
 });
