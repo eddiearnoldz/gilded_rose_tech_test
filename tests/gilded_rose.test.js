@@ -1,6 +1,7 @@
 const {Shop, Item} = require("../lib/gilded_rose");
 
 describe("Gilded Rose", function() {
+
     describe("normal item", () => {
 
       //Normal item: sellIn = 0 quality = 0
@@ -45,16 +46,31 @@ describe("Gilded Rose", function() {
     });
 
     describe("Sulfuras, Hand of Ragnaros item", () => {
+
       it("sellIn does not decrease", () => {
-        const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", 1, 1)]);
+        const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", 0, 1)]);
       const items = gildedRose.updateQuality();
-      expect(items[0].sellIn).toBe(1);
-      })
+      expect(items[0].sellIn).toBe(0);
+      });
+
       it("quality does not decrease", () => {
-        const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", 1, 1)]);
+        const gildedRose = new Shop([new Item("Sulfuras, Hand of Ragnaros", 0, 1)]);
       const items = gildedRose.updateQuality();
       expect(items[0].quality).toBe(1);
-      })
+      });
+    });
+
+    describe("Aged Brie", () => {
+      it("quality increases every day", () => {
+        const gildedRose = new Shop([new Item("Aged Brie", 1, 1)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(2);
+      });
+      it("quality does not increase if quality == 50", () => {
+        const gildedRose = new Shop([new Item("Aged Brie", 1, 50)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(50);
+      });
     })
   
 });
