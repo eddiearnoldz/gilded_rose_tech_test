@@ -6,6 +6,11 @@
 
   Given more time I would have liked to analyse how to refactor the code so that the long if statements in the main function may be transformed for easier readability.
 
+# Install and Tests
+- to access the files please clone the repo at https://github.com/eddiearnoldz/gilded_rose_tech_test
+- run ```npm install```
+- run ```jest``` to run the test suites
+
 
 ## The brief:
 
