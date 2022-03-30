@@ -1,5 +1,25 @@
 # Gilded rose tech test
 
+#  Intro and reflections
+
+  This was an afternoon challenge to complete the gilded rose tech test. I used javascript as the language and jest as my testing framework. Building a solid test suite allowed me to alter the code without unwittingly breaking the legacy code. This was a good lesson in how to get to grips and quickly understand legacy code and implement changes that do not affect the rest of the function. I tried to alter as little as possible and always used my tests to check that nothing was harming the outcome.
+
+  Given more time I would have liked to analyse how to refactor the code so that the long if statements in the main function may be transformed for easier readability.
+
+
+## The brief:
+
+Choose [legacy code](https://github.com/emilybache/GildedRose-Refactoring-Kata) (translated by Emily Bache) in the language of your choice. The aim is to practice good design in the language of your choice. Refactor the code in such a way that adding the new "conjured" functionality is easy.
+
+You don't need to clone the repo if you don't want to. Feel free to copy [the ruby code](https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/main/ruby/gilded_rose.rb) into a new folder and write your tests from scratch.
+
+HINT: Test first FTW!
+
+# Screenshots of diagram planning
+
+<img src="images/specifications_gilded_rose_tech_test.png" alt="screen shot of CLI" width="400px"/>
+<img src="images/flow_diagram.jpg" alt="screen shot of CLI" width="400px"/>
+
 This is a well known kata developed by [Terry Hughes](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/). This is commonly used as a tech test to assess a candidate's ability to read, refactor and extend legacy code.
 
 Here is the text of the kata:
@@ -20,15 +40,3 @@ We have recently signed a supplier of conjured items. This requires an update to
 * “Conjured” items degrade in Quality twice as fast as normal items
 
 Feel free to make any changes to the `UpdateQuality` method and add any new code as long as everything still works correctly. However, do not alter the Item class or Items property as those belong to the goblin in the corner who will insta-rage and one-shot you as he doesn’t believe in shared code ownership (you can make the `UpdateQuality` method and Items property static if you like, we’ll cover for you)."*
-
-## The brief:
-
-Choose [legacy code](https://github.com/emilybache/GildedRose-Refactoring-Kata) (translated by Emily Bache) in the language of your choice. The aim is to practice good design in the language of your choice. Refactor the code in such a way that adding the new "conjured" functionality is easy.
-
-You don't need to clone the repo if you don't want to. Feel free to copy [the ruby code](https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/main/ruby/gilded_rose.rb) into a new folder and write your tests from scratch.
-
-HINT: Test first FTW!
-
-# Screenshots of diagram planning
-
-<img src="images/specifications_gilded_rose_tech_test.png" alt="screen shot of CLI" width="400px"/>
