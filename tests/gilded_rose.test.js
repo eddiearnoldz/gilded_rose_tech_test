@@ -130,20 +130,40 @@ describe("Gilded Rose", function() {
 
     describe("conjured lizard", () =>{
       it("quality reduces by 2 if quality is greater than 1", () => {
-        const gildedRose = new Shop([new Item('conjured lizard', 0, 2)]);
+        const gildedRose = new Shop([new Item('conjured lizard', 1, 2)]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toBe(0);
+      });
+      it("quality reduces by 2 if quality is greater than 1", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', 1, 4)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(2);
       });
       it("sellIn reduces by 1 ", () => {
         const gildedRose = new Shop([new Item('conjured lizard', 1, 2)]);
         const items = gildedRose.updateQuality();
         expect(items[0].sellIn).toBe(0);
       });
-      // it("quality reduces by 1 if quality is equal to 1", () => {
-      //   const gildedRose = new Shop([new Item('conjured lizard', 0, 3)]);
-      //   const items = gildedRose.updateQuality();
-      //   expect(items[0].quality).toBe(1);
-      // });
+      it("quality reduces by 4 if sellIn is less than 0", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', -1, 4)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(0);
+      });
+      it("quality reduces by 2 if sellIn is less than 0 and quality is 2", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', -1, 2)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(0);
+      });
+      it("quality reduces by 1 if sellIn is less than 0 and quality is 1", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', -1, 1)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(0);
+      });
+      it("quality remains at 0 if sellIn is less than 0 and quality is 0", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', -1, 0)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(0);
+      });
     })
   
 });
