@@ -31,4 +31,4 @@ HINT: Test first FTW!
 
 # Screenshots of diagram planning
 
-<img src="images/Specifications_of_update_function.png" alt="screen shot of CLI" width="400px"/>
+<img src="images/specifications_gilded_rose_tech_test.png" alt="screen shot of CLI" width="400px"/>

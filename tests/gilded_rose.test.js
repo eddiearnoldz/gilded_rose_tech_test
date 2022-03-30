@@ -127,5 +127,18 @@ describe("Gilded Rose", function() {
         expect(items[0].sellIn).toBe(-1);
       });
     })
+
+    describe("conjured lizard", () =>{
+      it("quality reduces by 2 if quality is greater than 1", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', 0, 2)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(0);
+      });
+      it("quality reduces by 1 if quality is equal to 1", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', 0, 1)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(0);
+      });
+    })
   
 });
