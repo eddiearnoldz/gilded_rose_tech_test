@@ -129,12 +129,12 @@ describe("Gilded Rose", function() {
     })
 
     describe("conjured lizard", () =>{
-      it("quality reduces by 2 if quality is greater than 1", () => {
+      it("quality reduces by 2 if quality 2", () => {
         const gildedRose = new Shop([new Item('conjured lizard', 1, 2)]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toBe(0);
       });
-      it("quality reduces by 2 if quality is greater than 1", () => {
+      it("quality reduces by 2 if quality is 4", () => {
         const gildedRose = new Shop([new Item('conjured lizard', 1, 4)]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toBe(2);
@@ -146,6 +146,11 @@ describe("Gilded Rose", function() {
       });
       it("quality reduces by 4 if sellIn is less than 0", () => {
         const gildedRose = new Shop([new Item('conjured lizard', -1, 4)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].quality).toBe(0);
+      });
+      it("quality reduces by 1 if sellIn 1", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', 1, 1)]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toBe(0);
       });
@@ -163,6 +168,11 @@ describe("Gilded Rose", function() {
         const gildedRose = new Shop([new Item('conjured lizard', -1, 0)]);
         const items = gildedRose.updateQuality();
         expect(items[0].quality).toBe(0);
+      });
+      it("sellIn reduces by 1 after 0", () => {
+        const gildedRose = new Shop([new Item('conjured lizard', -1, 0)]);
+        const items = gildedRose.updateQuality();
+        expect(items[0].sellIn).toBe(-2);
       });
     })
   
