@@ -28,3 +28,7 @@ Choose [legacy code](https://github.com/emilybache/GildedRose-Refactoring-Kata) 
 You don't need to clone the repo if you don't want to. Feel free to copy [the ruby code](https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/main/ruby/gilded_rose.rb) into a new folder and write your tests from scratch.
 
 HINT: Test first FTW!
+
+# Screenshots of diagram planning
+
+<img src="images/Specifications_of_update_function.png" alt="screen shot of CLI" width="400px"/>
