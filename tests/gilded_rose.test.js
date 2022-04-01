@@ -72,7 +72,7 @@ describe("Gilded Rose", function() {
       expect(items[0].quality).toBe(50);
     });
     it("sellIn reduces each day", () => {
-      const gildedRose = new Shop([new Item("Aged Brie", 1, 50)]);
+      const gildedRose = new Shop([new Item("Aged Brie", 1, 49)]);
       const items = gildedRose.updateQuality();
       expect(items[0].sellIn).toBe(0);
     });
