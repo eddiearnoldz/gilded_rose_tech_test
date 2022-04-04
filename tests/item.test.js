@@ -1,4 +1,4 @@
-const {Item} = require("../lib/gilded_rose");
+const Item = require("../lib/item");
 
 describe("Item class", () => {
   it("should have a name", () => {
